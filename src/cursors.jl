@@ -375,3 +375,7 @@ TreeCursor(::NodeTypeUnknown, ::NonIndexedChildren, ::ParentLinks, ::ImplicitSib
 # extra methods to resolve ambiguity
 TreeCursor(::NodeTypeUnknown, ::IndexedChildren, ::StoredParents, ::StoredSiblings, node) = TrivialCursor(node)
 TreeCursor(::NodeTypeUnknown, ::NonIndexedChildren, ::StoredParents, ::StoredSiblings, node) = TrivialCursor(node)
+
+function ischildenempty(x::TreeCursor)
+    (ischildenempty ∘ children ∘ nodevalue)(x)
+end 

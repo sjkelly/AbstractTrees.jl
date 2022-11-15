@@ -211,7 +211,7 @@ function print_tree(printnode::Function, print_child_key::Function, io::IO, node
     c = children(node)
 
     # No children?
-    isempty(c) && return
+    ischildenempty(c) && return
 
     # Reached max depth?
     if depth ≥ maxdepth
